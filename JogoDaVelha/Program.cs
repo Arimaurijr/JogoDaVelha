@@ -10,7 +10,6 @@
 
         char[,] cerquilha = new char[3, 3];
 
-
         Inicializacao(cerquilha);
         //Console.WriteLine("EXIBIÇÃO DOS VALORES");
         //Exibicao(cerquilha);
