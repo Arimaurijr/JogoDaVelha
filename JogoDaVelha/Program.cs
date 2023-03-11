@@ -12,10 +12,6 @@
                              { '4','5','6' },
                              { '7','8','9'} };
 
-        //Inicializacao(cerquilha);
-        //Console.WriteLine("EXIBIÇÃO DOS VALORES");
-        //Exibicao(cerquilha);
-
 
         while (ganhou == false && cont_rodadas < 9)
         {
@@ -34,13 +30,13 @@
                         linha = 0;
                         coluna = 0;
                         verifica = VerificaPosicao(linha, coluna);
-                        break;
+                    break;
 
                     case 2:
                         linha = 0;
                         coluna = 1;
                         verifica = VerificaPosicao(linha, coluna);
-                        break;
+                    break;
 
                     case 3:
                         linha = 0;
@@ -52,37 +48,37 @@
                         linha = 1;
                         coluna = 0;
                         verifica = VerificaPosicao(linha, coluna);
-                        break;
+                    break;
 
                     case 5:
                         linha = 1;
                         coluna = 1;
                         verifica = VerificaPosicao(linha, coluna);
-                        break;
+                    break;
 
                     case 6:
                         linha = 1;
                         coluna = 2;
                         verifica = VerificaPosicao(linha, coluna);
-                        break;
+                    break;
 
                     case 7:
                         linha = 2;
                         coluna = 0;
                         verifica = VerificaPosicao(linha, coluna);
-                        break;
+                    break;
 
                     case 8:
                         linha = 2;
                         coluna = 1;
                         verifica = VerificaPosicao(linha, coluna);
-                        break;
+                    break;
 
                     case 9:
                         linha = 2;
                         coluna = 2;
                         verifica = VerificaPosicao(linha, coluna);
-                        break;
+                    break;
 
                 }
 
@@ -122,15 +118,18 @@
 
         }
 
+        Console.Clear();
         if (ganhou == true)
         {
             if (cont_rodadas % 2 == 0)
             {
+                
                 Console.WriteLine("O jogador com marcação de BOLA ganhou !!!");
+             
             }
             else
             {
-                Console.WriteLine("O jogador com marcacao de X ganhou !!!");
+                Console.WriteLine("O jogador com marcacão de X ganhou !!!");
             }
         }
         else
@@ -138,22 +137,7 @@
             Console.WriteLine("DEU VELHA !!!");
         }
 
-
-        /*
-        void Inicializacao(char[,] cerquilha)
-        {
- 
-            for (int linha = 0; linha < 3; linha++)
-            {
-                for (int coluna = 0; coluna < 3; coluna++)
-                {
-       
-                  cerquilha[linha, coluna] = 'l'; 
-                  
-                }
-            }
-        }
-        */
+        Exibicao(cerquilha);
 
         void Exibicao(char[,] cerquilha)
         {
@@ -277,7 +261,7 @@
             int cont_bola = 0;
             int cont_X = 0;
 
-            for (int linha = 0, coluna = 2; linha < 3; linha++, coluna--)
+            for (int linha = 0, coluna = cerquilha.GetLength(1) - 1; linha < cerquilha.GetLength(0); linha++, coluna--)
             {
                 if (cerquilha[linha, coluna] == 'O')
                 {
