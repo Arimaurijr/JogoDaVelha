@@ -8,9 +8,11 @@
         int lugar_cerquilha = 0;
         int linha = 0, coluna = 0;
 
-        char[,] cerquilha = new char[3, 3];
+        char[,] cerquilha = {{'1','2','3' },
+                             { '4','5','6' },
+                             { '7','8','9'} };
 
-        Inicializacao(cerquilha);
+        //Inicializacao(cerquilha);
         //Console.WriteLine("EXIBIÇÃO DOS VALORES");
         //Exibicao(cerquilha);
 
@@ -23,7 +25,7 @@
             do
             {
                 Console.WriteLine("Rodada: " + cont_rodadas);
-                Console.Write("DIGITE A POSICAO: ");
+                Console.Write("DIGITE A POSICAO[1 - 9]: ");
                 lugar_cerquilha = int.Parse(Console.ReadLine());
 
                 switch (lugar_cerquilha)
@@ -32,31 +34,31 @@
                         linha = 0;
                         coluna = 0;
                         verifica = VerificaPosicao(linha, coluna);
-                    break;
+                        break;
 
                     case 2:
                         linha = 0;
                         coluna = 1;
                         verifica = VerificaPosicao(linha, coluna);
-                    break;
+                        break;
 
                     case 3:
                         linha = 0;
                         coluna = 2;
                         verifica = VerificaPosicao(linha, coluna);
-                    break;
+                        break;
 
                     case 4:
                         linha = 1;
                         coluna = 0;
                         verifica = VerificaPosicao(linha, coluna);
-                    break;
+                        break;
 
                     case 5:
                         linha = 1;
                         coluna = 1;
                         verifica = VerificaPosicao(linha, coluna);
-                    break;
+                        break;
 
                     case 6:
                         linha = 1;
@@ -68,19 +70,19 @@
                         linha = 2;
                         coluna = 0;
                         verifica = VerificaPosicao(linha, coluna);
-                    break;
+                        break;
 
                     case 8:
                         linha = 2;
                         coluna = 1;
                         verifica = VerificaPosicao(linha, coluna);
-                    break;
+                        break;
 
                     case 9:
                         linha = 2;
                         coluna = 2;
                         verifica = VerificaPosicao(linha, coluna);
-                    break;
+                        break;
 
                 }
 
@@ -104,17 +106,17 @@
                     i++;
                 }
 
-                if(ganhou == false)
+                if (ganhou == false)
                 {
                     ganhou = VerificaDiagonalPrincipal(cerquilha);
 
-                    if(ganhou == false)
+                    if (ganhou == false)
                     {
                         ganhou = VerificaDiagonalSecundaria(cerquilha);
                     }
                 }
-                
-               
+
+
             }
 
 
@@ -137,17 +139,21 @@
         }
 
 
-
+        /*
         void Inicializacao(char[,] cerquilha)
         {
+ 
             for (int linha = 0; linha < 3; linha++)
             {
                 for (int coluna = 0; coluna < 3; coluna++)
                 {
-                    cerquilha[linha, coluna] = 'l';
+       
+                  cerquilha[linha, coluna] = 'l'; 
+                  
                 }
             }
         }
+        */
 
         void Exibicao(char[,] cerquilha)
         {
@@ -155,7 +161,7 @@
             {
                 for (int coluna = 0; coluna < 3; coluna++)
                 {
-                    Console.Write(cerquilha[linha, coluna] + " ");
+                    Console.Write(cerquilha[linha, coluna] + "  ");
                 }
 
                 Console.WriteLine();
@@ -166,7 +172,7 @@
         {
             bool verifica = false;
 
-            if (cerquilha[linha, coluna] == 'l')
+            if (cerquilha[linha, coluna] != 'X' && cerquilha[linha, coluna] != 'O')
             {
                 verifica = true;
             }
